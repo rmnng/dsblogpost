@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://www.sueddeutsche.de/image/sz.1.4251859?v=1544705249&format=webp">
-    <img src="https://www.sueddeutsche.de/image/sz.1.4251859?v=1544705249&format=webp" alt="Munich AirBnB" width="500" height="200">
+  <a href="munich_airbnb.jpg">
+    <img src="munich_airbnb.jpg" alt="Munich AirBnB" width="500" height="200">
   </a>
 </p>
 
