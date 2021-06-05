@@ -86,35 +86,3 @@ def find_best_score(df, relevant, y_target, start_with=1, step=1, test_size=.30,
         
     return no_features, r2_scores_train, r2_scores_test, train_score, test_score
 
-
-def run_regression2(X, y, test_size=0.3, random_state=19, show_score=False):
-    '''
-    Function creating a linear regression model and scoring it for training and testing data
-    
-    INPUT:
-    X ... predctive features data
-    y ... target data
-    
-    
-    OUTPUT:
-    r2_train_score ... r2 score for training data
-    r2_test_score ... r2 score for test data
-    '''
-        
-    #split the data into train and test
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
-
-    #fit the model and obtain pred response
-    linreg = LinearRegression(normalize=True)
-    linreg.fit(X_train, y_train)
-    y_test_preds = linreg.predict(X_test)
-    y_train_preds = linreg.predict(X_train) 
-    
-    #calculate r2 scores
-    r2_train_score = r2_score(y_train, y_train_preds)
-    r2_test_score = r2_score(y_test, y_test_preds)
-    
-    if show_score == True:
-        print('r2 score on training data: {0}, r2 score on test data: {1}'.format(r2_train_score, r2_test_score))
-    
-    return r2_train_score, r2_test_score
