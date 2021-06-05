@@ -30,10 +30,10 @@ After first review of the data, following questions came into my mind which migh
 
 <a name="installation"></a>
 ## *Installation*
-To open and execute all jupyter notebook in this project, install the newest [Anaconda distribution](https://docs.anaconda.com/anaconda/install/) and you should be fine. Regarding python libraries, following libs are used: *pandas*, *numpy*, *maplotlib*, *folium*, *seaborn*, *sklearn*. In case you are missing any of the libs after you installed Anaconda, use following syntax on the commandline:
+To open and execute all jupyter notebook in this project, install the newest [Anaconda distribution](https://docs.anaconda.com/anaconda/install/) and you should be fine. Regarding python libraries, following libs are used: *pandas (1.2.4)*, *numpy (1.20.1)*, *maplotlib (3.3.4)*, *folium (0.12.1)*, *seaborn (0.11.1)*, *sklearn (0.24.1)*. In case you are missing any of the libs after you installed Anaconda, use following syntax on the command line:
  
  ```
-pip3 install name_of_the_lib 
+pip3 install <name_of_the_lib> 
 ```
 Python version used for the development was *Python 3.8*. 
 
@@ -62,6 +62,7 @@ For listings, this includes information like what districts are the listings dis
 <br>
 <br>
 [**data_utils.py**](data_utils.py) - provides utilities used in the jupyter notebooks above to work with pandas data frames and columns.
+<br>
 [**model_utils.py**](model_utils.py) - provides utilities to execute the linear regression and to optimize the feature selection.
 
 <a name="usage"></a>
@@ -70,7 +71,7 @@ If you want to re-run all jupyter notebooks in this project, the best way is to 
  ```
 git clone https://github.com/rmnng/dsblogpost.git 
 ```
-
+In the sub-folder *munich* you can find all current dataset downloaded from [AirBnB](http://insideairbnb.com/munich/). Feel feel to download recent data and re-execute all jupyter notebooks. Please let me know if you figure out different conclusions based on the new data. 
 <br>
 
 <a name="authors"></a>

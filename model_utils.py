@@ -33,7 +33,7 @@ def run_regression(X, y, test_size=0.3, random_state=19, show_score=False):
     r2_test_score = r2_score(y_test, y_test_preds)
     
     if show_score == True:
-        print('r2 score on training data: {0}, r2 score on test data: {1}'.format(r2_train_score, r2_test_score))
+        print('r2 score on training data: {:.2f}, r2 score on test data: {:.2f}'.format(r2_train_score, r2_test_score))
     
     return r2_train_score, r2_test_score
 
@@ -73,7 +73,7 @@ def find_best_score(df, relevant, y_target, start_with=1, step=1, test_size=.30,
     test_score = r2_scores_test[best_test_index]
     no_features = num_feats[best_test_index]
 
-    print("Best model with {0} features: r2_score for training set {1} and r2_score for test set {2}".format(no_features, train_score, test_score))
+    print("Best model with {} features: r2_score for training set {:.2f} and r2_score for test set {:.2f}".format(no_features, train_score, test_score))
     if plot:
         plt.rcParams["figure.figsize"] = [15, 10]
         plt.plot(num_feats[:no_features], r2_scores_test[:no_features], label="Test", alpha=.5)
