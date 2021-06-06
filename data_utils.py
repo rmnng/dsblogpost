@@ -1,6 +1,6 @@
 import pandas as pd
 
-def replace_boolean_values(col: pd.Series) -> pd.Series:
+def replace_boolean_values(col):
     '''
     replace 't' with 1
     replace 'f' with 0
@@ -11,7 +11,7 @@ def replace_boolean_values(col: pd.Series) -> pd.Series:
     col.fillna(value='3', inplace=True)
     return col.astype(int)
 
-def convert_strings_to_columns(df: pd.DataFrame, col: str) -> pd.DataFrame:
+def convert_strings_to_columns(df, col):
     '''
     INPUT:
     df - panda DataFrame containing columns with multiple categorical values as string
@@ -40,7 +40,7 @@ def convert_strings_to_columns(df: pd.DataFrame, col: str) -> pd.DataFrame:
             
     return df, columns_set
 
-def create_dummy_df(df, cat_cols, dummy_na)  -> pd.DataFrame:
+def create_dummy_df(df, cat_cols, dummy_na):
     '''
     INPUT:
     df - pandas dataframe with categorical variables you want to dummy

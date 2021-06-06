@@ -12,6 +12,8 @@ def run_regression(X, y, test_size=0.3, random_state=19, show_score=False):
     INPUT:
     X ... predctive features data
     y ... target data
+    test_size, random_state ... parameters of the linear regression model
+    show_score ... activating print notifications during the training (for debug purposes)
     
     
     OUTPUT:
@@ -40,7 +42,26 @@ def run_regression(X, y, test_size=0.3, random_state=19, show_score=False):
 def find_best_score(df, relevant, y_target, start_with=1, step=1, test_size=.30, random_state=42, plot=True, show_score=False, negative_in_row_to_stop=10):
     '''
     Running liner regression using increasing number of features and returning best scores achieved
+
+    INPUT:
+    df ... full dataset
+    relevant ... list of all features sorted by correlation with the target
+    y_target ... name of the column containing target of the prediction
+    start_with ... number of features to start with
+    step ... number of featured to add in the next training loop
+    test_size, random_state ... parameters of the linear regression model
+    plot ... ploting r2 scores as graph 
+    show_score ... activating print notifications during the training (for debug purposes) 
+    negative_in_row_to_stop ... how many negative r2 scores for test data needed to stop the training
+
+    OUTPUT:
+    no_features ... number of features used to acieve the best r2 test score
+    r2_scores_train ... list of all  r2 scores achieved for training data
+    r2_scores_test ... list of all  r2 scores achieved for test data
+    train_score ... r2  train score achieved with the best r2 test score
+    test_score ... best r2 test score achieved
     '''
+    
     cnt_negative=0
     r2_scores_test, r2_scores_train, num_feats = [], [], []
     
